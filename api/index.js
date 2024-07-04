@@ -1,6 +1,6 @@
 const express = require("express");
-const scrapeLotteryWinners = require("./app/scrapeLotteryWinners");
-const findWinner = require("./app/findWinner");
+const scrapeLotteryWinners = require("../app/scrapeLotteryWinners");
+const findWinner = require("../app/findWinner");
 const { injectSpeedInsights } = require("@vercel/speed-insights");
 
 const app = express();
