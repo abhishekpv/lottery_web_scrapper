@@ -12,6 +12,7 @@ const scrapeLotteryWinners = async () => {
     row.title = $(element).find("td.text-left").text().trim();
     row.date = $(element).find("td:nth-child(2)").text().trim();
     row.link = $(element).find("td a").attr("href");
+    row.id = row.link.split("=")[1];
     rows.push(row);
   });
 
