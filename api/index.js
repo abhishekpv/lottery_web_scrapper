@@ -17,7 +17,7 @@ router.get("/lotteries", async (req, res, next) => {
 });
 
 router.get("/winner", async (req, res, next) => {
-  const { lottery, pdf } = req.body;
+  const { lottery, pdf } = req.params;
   const winner = await findWinner(lottery, pdf);
   res.status(200).json(winner);
 });
