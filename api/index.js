@@ -1,10 +1,14 @@
 const express = require("express");
 const scrapeLotteryWinners = require("../app/scrapeLotteryWinners");
 const findWinner = require("../app/findWinner");
+import { injectSpeedInsights } from '@vercel/speed-insights';
+
 
 const app = express();
 app.use(express.json());
 const router = express.Router();
+injectSpeedInsights();
+
 app.use("/", router);
 
 router.get("/lotteries", async (req, res, next) => {
