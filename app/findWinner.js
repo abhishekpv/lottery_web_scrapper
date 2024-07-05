@@ -5,16 +5,10 @@ const url =
   "https://result.keralalotteries.com/viewlotisresult.php?drawserial=";
 
 const findWinner = async (lottery, pdf) => {
-  if (!lottery || !pdf) {
-    let message = "";
-    if (!pdf) {
-      message = "No pdf id provided.";
-    } else {
-      message = "No lottery no provided.";
-    }
+  if (!pdf) {
     return {
       success: false,
-      error: message,
+      error: "No pdf id provided.",
     };
   }
   const downloadedPdf = await downloadPdf(url + pdf);

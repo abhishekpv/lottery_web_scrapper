@@ -11,8 +11,9 @@ const findLottery = (data, lottery) => {
     }
   });
   if (!found) {
+    const lastDigits = lottery.slice(-4);
     data.secondaryPrize.map((item) => {
-      if (item.data.includes(lottery)) {
+      if (item.data.includes(lastDigits)) {
         found = true;
         result.lottery = lottery;
         result.title = item.title;
