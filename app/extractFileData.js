@@ -31,7 +31,7 @@ const formatData = (result, matches) => {
 };
 
 const fetchMainPrize = (data) => {
-  const result = data.split("THIRUVANANTHAPURAM")[1];
+  const result = data.split("NEAR BAKERY JUNCTION, THIRUVANANTHAPURAM")[1];
   const matches = result.match(categoryRegex);
   const output = formatData(result, matches);
 
